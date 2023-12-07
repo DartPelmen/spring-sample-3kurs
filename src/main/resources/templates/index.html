@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GAME LIST</title>
+</head>
+<body>
+<div>
+    <form action="/add" method="post">
+        <div>
+            <label for="gameNameToAddField">Имя игры</label>
+            <input id="gameNameToAddField" name="name" type="text" required placeholder="game name"/>
+            <input id="addButton" type="submit" value="ADD GAME"/>
+        </div>
+    </form>
+</div>
+<div>
+    <form action="/delete" method="post">
+        <div>
+            <label for="gameNameToDeleteField">Имя игры</label>
+            <input id="gameNameToDeleteField" name="name" type="text" required placeholder="game name"/>
+            <input id="deleteButton" type="submit" value="ADD GAME"/>
+        </div>
+    </form>
+</div>
+<th:block th:each="game:${games}">
+    <div>
+        <h4 th:text="${game.name}"></h4>
+    </div>
+</th:block>
+</body>
+</html>
